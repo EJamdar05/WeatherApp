@@ -16,6 +16,11 @@ data will then be sent to the localserver and can be accessed via a get route.
 After the user hits the generate button, a date, the temperature and their comment
 is dynamically added to the page
 
+## Instructions
+
+Download the zipfile and run the server.js file via CMD Prompt or Powershell with the correct file path to 
+establish the local server.
+
 ## Credits
 
 The HTML and CSS code were provided at the hands of the UDacity team and all credit 
