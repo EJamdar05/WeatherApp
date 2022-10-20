@@ -9,7 +9,7 @@ let baseURL = "http://api.openweathermap.org/data/2.5/weather?zip=";
 let apiKey = "&appid=683ab2ba4e65e8846a80c2c2e5a7e2fd";
 const date = new Date();
 const currentDate = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`;
-
+const resultEl = document.getElementById("results")
 /*
     ~an event listener is added to the generate button that will
     get the users input (zipcode and comment)
@@ -23,12 +23,12 @@ const currentDate = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(event){
-    const userZipcode = document.getElementById('zip').value;
-    const userComment = document.getElementById('feelings').value;
+    const userZipcode = document.getElementById('zipcode').value;
+    const userComment = document.getElementById('comment').value;
     getTemp(baseURL, userZipcode, apiKey)
-
     .then(function(data){
         postData('/add', {date:currentDate, temp:data.main.temp, comment: userComment});
+        resultEl.scrollIntoView()
         addPost();
     });
 }
@@ -91,9 +91,9 @@ const addPost = async()=>{
     try{
         const allData = await request.json();
         let unitConversion = ((allData.temp * 9)/5)-459.67;
-        document.getElementById('date').innerHTML = `Date of Post: ${allData.date}`;
-        document.getElementById('temp').innerHTML = `Temperateur from your Zip: ${unitConversion.toFixed(0)} F°`;
-        document.getElementById('content').innerHTML = `Your Thoughts of the day: ${allData.comment}`;
+        document.getElementById('results').innerHTML = `<p id = "date"><b>Date of Post:</b> ${allData.date}</p>
+        <p id = "zip"><b>Temperature from your Zip:</b> ${unitConversion.toFixed(0)} F°</p>
+        <p id = "comment-s"><b>Your Thoughts of the day:</b> ${allData.comment}</p>`
     }
     catch(error){
         console.log(`Error: ${error}`);
