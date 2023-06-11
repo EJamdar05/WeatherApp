@@ -1,4 +1,5 @@
 # WeatherApp
+https://github.com/EJamdar05/WeatherApp/assets/68107791/5d48cb67-66ed-4ae8-b7b6-eba90e364664
 
 This is the third project in the UDacity Front End Web Dev course. 
 In this project, it demonstartes the usage of nodeJS and establishing 
@@ -23,6 +24,6 @@ establish the local server.
 
 ## Credits
 
-The HTML and CSS code were provided at the hands of the UDacity team and all credit 
-goes to them. The server and client side code were written by me. WebAPI data was provided at the hands of OpenWeatherMap.
+The HTML and CSS base starter code were provided at the hands of the UDacity team and all credit 
+goes to them. The server, client side code as well as the extended HTML and CSS were written by me. WebAPI data was provided at the hands of OpenWeatherMap.
 
